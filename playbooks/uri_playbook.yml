@@ -8,5 +8,5 @@
 
   - name: Request URL
     ansible.builtin.uri:
-      url: "{{ surve_url }}"
+      url: "{{ survey_url }}"
       return_content: true
