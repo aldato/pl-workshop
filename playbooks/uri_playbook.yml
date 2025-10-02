@@ -10,3 +10,8 @@
     ansible.builtin.uri:
       url: "{{ survey_url }}"
       return_content: true
+    register: result
+
+  - name: Show URL content
+    ansible.builtin.debug:
+      msg: "{{ result }}"
