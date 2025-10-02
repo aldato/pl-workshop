@@ -14,4 +14,4 @@
 
   - name: Show URL content
     ansible.builtin.debug:
-      msg: "{{ result }}"
+      msg: "{{ result.content }}"
