@@ -1,0 +1,12 @@
+---
+- name: Basic URI playbook
+  hosts: "{{ target | default('all') }}"
+  gather_facts: false
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  tasks:
+
+  - name: Request URL
+    ansible.builtin.uri:
+      url: "{{ surve_url }}"
+      return_content: true
