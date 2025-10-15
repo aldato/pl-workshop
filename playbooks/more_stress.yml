@@ -1,0 +1,13 @@
+---
+- name: Continuous curl monitoring playbook
+  hosts: all
+  gather_facts: no
+  vars:
+    target_url: "http://example.com"
+
+  tasks:
+    - name: Continuous curl requests
+      shell: |
+        while true; do
+          seq 1 10 | xargs -n1 -P10 curl -s {{ target_url }} > /dev/null
+        done
